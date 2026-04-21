@@ -1,0 +1,14 @@
+@layer base {
+    body {
+        @apply bg-[#050505] overflow-x-hidden;
+    }
+}
+
+.hero-canvas {
+    filter: contrast(1.1) brightness(1.2);
+}
+
+/* Emulating the liquid glow from the video */
+.liquid-glow {
+    box-shadow: 0 0 50px rgba(188, 19, 254, 0.5);
+}

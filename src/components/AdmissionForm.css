@@ -1,0 +1,303 @@
+.af-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(2, 12, 27, 0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.af-overlay--in {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.af-overlay--out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.af-box {
+    background: rgba(10, 20, 38, 0.85);
+    backdrop-filter: blur(32px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.02);
+    width: 100%;
+    max-width: 600px;
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(40px) scale(0.95);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.af-box--in {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.af-box--out {
+    transform: translateY(-40px) scale(0.95);
+    opacity: 0;
+}
+
+.af-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.af-close:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.4);
+    transform: rotate(90deg);
+}
+
+.af-content {
+    padding: 48px;
+}
+
+.af-header {
+    margin-bottom: 32px;
+}
+
+.af-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.af-subtitle {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.af-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.af-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.af-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.af-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-left: 4px;
+    transition: all 0.3s ease;
+}
+
+.af-field--focused .af-label {
+    color: #818cf8;
+}
+
+.af-form input,
+.af-form textarea {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 14px 18px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.af-form input:focus,
+.af-form textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #4f46e5;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.15);
+}
+
+.af-form input::placeholder,
+.af-form textarea::placeholder {
+    color: #334155;
+}
+
+.af-field--disabled input {
+    background: rgba(255, 255, 255, 0.01) !important;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+    color: #10b981 !important;
+    font-weight: 800 !important;
+    cursor: default;
+}
+
+.af-field-hint {
+    position: absolute;
+    right: 18px;
+    bottom: 14px;
+    font-size: 0.65rem;
+    color: #475569;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.af-submit {
+    margin-top: 12px;
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+    border: none;
+    border-radius: 16px;
+    padding: 18px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
+}
+
+.af-submit:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(79, 70, 229, 0.45);
+    background: linear-gradient(135deg, #6366f1 0%, #60a5fa 100%);
+}
+
+.af-submit:active {
+    transform: translateY(0);
+}
+
+.af-footer {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #475569;
+    margin-top: 8px;
+}
+
+.af-success {
+    text-align: center;
+    padding: 40px 0;
+    animation: successIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes successIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.af-success-icon {
+    width: 96px;
+    height: 96px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    border: 2px solid rgba(16, 185, 129, 0.2);
+}
+
+.af-success-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.af-success-text {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+    .af-overlay {
+        align-items: flex-start;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    .af-box {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 24px;
+    }
+
+    .af-content {
+        padding: 40px 20px 30px;
+    }
+
+    .af-header {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .af-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .af-title {
+        font-size: 1.7rem;
+    }
+
+    .af-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .af-form input,
+    .af-form textarea {
+        font-size: 16px; /* Prevents auto-zoom on mobile */
+        padding: 12px 16px;
+    }
+
+    .af-close {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .af-submit {
+        padding: 16px;
+        font-size: 0.95rem;
+    }
+
+    .af-footer {
+        margin-top: 15px;
+    }
+}
