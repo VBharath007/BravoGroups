@@ -9,7 +9,7 @@ import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import { Stethoscope, Microscope, FlaskConical, Globe2, GraduationCap, BookOpen, ShieldCheck, Users, ArrowRight, MapPin, Star, ChevronDown } from 'lucide-react';
+import { Stethoscope, Microscope, FlaskConical, Globe2, GraduationCap, BookOpen, ShieldCheck, Users, ArrowRight, MapPin, Star } from 'lucide-react';
 import AdmissionForm from '../../components/AdmissionForm';
 import AdmissionProtocol from '../../components/ui/AdmissionProtocol';
 import LazyImage from '../../components/Lazyimage';
@@ -21,7 +21,6 @@ import campus2 from '../../assets/takshnet2.jpg'
 import campus3 from '../../assets/tashkent_city.png'
 
 
-import Footer from '../../components/Footer';
 
 
 // ── Floating Particle Field (Three.js) ──────────────────────────────────

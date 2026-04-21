@@ -10,7 +10,6 @@ import AdmissionProtocol from '../../components/ui/AdmissionProtocol';
 import LazyImage from '../../components/Lazyimage';
 
 
-import Footer from '../../components/Footer';
 
 
 import bgImg from '../../assets/samarkand1.jpg';

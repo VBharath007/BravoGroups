@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { countryData } from '../components/data/countryData';
 import { SplineScene } from '../components/ui/spline';
 import LazyImage from '../components/Lazyimage';
@@ -56,10 +56,6 @@ const fadeUp = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
 };
 
-const scaleIn = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: 'easeOut' } }
-};
 
 /* ─── Shared Components ─────────────────────────────────────── */
 const SectionLabel = ({ text, accent }) => (
@@ -70,16 +66,6 @@ const SectionLabel = ({ text, accent }) => (
     </div>
 );
 
-const StatCard = ({ label, value, i }) => (
-    <motion.div
-        variants={scaleIn}
-        className="relative group p-6 rounded-[2rem] glass overflow-hidden flex flex-col items-center justify-center text-center border border-white/5"
-    >
-        <div className="absolute inset-0 bg-white/2 opacity-0 group-hover:opacity-100 transition-opacity" />
-        <span className="text-[10px] font-black text-neutral-500 uppercase tracking-widest mb-2">{label}</span>
-        <span className="text-xl font-extrabold text-white">{value}</span>
-    </motion.div>
-);
 
 const FeatureCard = ({ text, icon, accent, delay }) => (
     <motion.div
@@ -105,9 +91,7 @@ const FeatureCard = ({ text, icon, accent, delay }) => (
 ══════════════════════════════════════════════════════════════════ */
 const Countries = () => {
     const location = useLocation();
-    const navigate = useNavigate();
     const [activeId, setActiveId] = useState('uzbekistan');
-    const [sidebarOpen, setSidebarOpen] = useState(false);
     const scrollContainerRef = useRef(null);
 
     /* Scroll animations */

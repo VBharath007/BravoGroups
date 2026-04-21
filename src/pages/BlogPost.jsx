@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
-import Navbar from '../components/Navbar';
 import { GlassButton } from '../components/ui/glass-button';
 import LazyImage from '../components/Lazyimage';
 
@@ -25,7 +24,6 @@ const BlogPost = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
   const [post, setPost] = useState(null);
-  const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -34,7 +32,6 @@ const BlogPost = () => {
     const foundPost = blogPosts.find((p) => p.slug === slug);
     if (foundPost) {
       setPost(foundPost);
-      setRelatedPosts(blogPosts.filter((p) => p.slug !== slug).slice(0, 3));
     }
   }, [slug]);
 

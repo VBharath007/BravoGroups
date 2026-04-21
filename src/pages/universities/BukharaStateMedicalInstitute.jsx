@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
-import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,7 +9,7 @@ import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import { Stethoscope, Microscope, Globe2, GraduationCap, ShieldCheck, ArrowRight, MapPin, ChevronDown, FlaskConical, RefreshCcw, UserCheck, Syringe } from 'lucide-react';
+import { Stethoscope, Globe2, ShieldCheck, ArrowRight, MapPin, FlaskConical, RefreshCcw, UserCheck } from 'lucide-react';
 import AdmissionForm from '../../components/AdmissionForm';
 import AdmissionProtocol from '../../components/ui/AdmissionProtocol';
 import Footer from '../../components/Footer';
@@ -88,7 +87,6 @@ const BukharaStateMedicalInstitute = () => {
   const heroRotate = useTransform(scrollYProgress, [0, 0.4], [0, 10]);
   const heroScale = useTransform(scrollYProgress, [0, 0.4], [1, 1.15]);
   const storyRotate = useTransform(scrollYProgress, [0.1, 0.5], [5, 0]);
-  const storyOpacity = useTransform(scrollYProgress, [0.1, 0.35], [0, 1]);
 
   const [mouse, setMouse] = useState({ x: 50, y: 50 });
 

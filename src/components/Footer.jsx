@@ -2,8 +2,7 @@ import './Footer.css';
 import logo from '../assets/bgremovedlogo-small.webp.webp';
 import { Link } from 'react-router-dom';
 import {
-  uzbekistanRegions,
-  kyrgyzstanLinks
+  uzbekistanRegions
 } from '../data/universityLinks';
 
 const uzbekistanUniversities = uzbekistanRegions.flatMap(r => r.links);
@@ -41,13 +40,13 @@ export default function Footer() {
             Bravo Groups Make it Happens
           </p>
           <div className="footer-socials">
-            <a href="#" title="Facebook" style={{ transform: 'translateZ(0)' }}>
+            <a href="#!" title="Facebook" style={{ transform: 'translateZ(0)' }} onClick={(e) => e.preventDefault()}>
               <i className="fa-brands fa-facebook-f"></i>
             </a>
-            <a href="#" title="Instagram" style={{ transform: 'translateZ(0)' }}>
+            <a href="#!" title="Instagram" style={{ transform: 'translateZ(0)' }} onClick={(e) => e.preventDefault()}>
               <i className="fa-brands fa-instagram"></i>
             </a>
-            <a href="#" title="YouTube" style={{ transform: 'translateZ(0)' }}>
+            <a href="#!" title="YouTube" style={{ transform: 'translateZ(0)' }} onClick={(e) => e.preventDefault()}>
               <i className="fa-brands fa-youtube"></i>
             </a>
             <a href="https://wa.me/918838071494" target="_blank" rel="noopener noreferrer" title="WhatsApp" style={{ transform: 'translateZ(0)' }}>

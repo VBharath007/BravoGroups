@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ShieldCheck, GraduationCap, FileText, ClipboardCheck, Award } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, FileText, ClipboardCheck, Award } from 'lucide-react';
 
 const AdmissionProtocol = ({ themeAccent = "#00D4FF" }) => {
   const eligibility = [

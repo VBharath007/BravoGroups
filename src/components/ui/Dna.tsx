@@ -1,8 +1,8 @@
 import React, { useRef } from "react"
-import { motion, useScroll, useTransform, AnimatePresence, useSpring } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { SplineScene } from "./spline"
 import { Spotlight } from "./spotlight-aceternity"
-import { Stethoscope, Activity, Globe, GraduationCap, CheckCircle2, PhoneCall, Award } from "lucide-react"
+import { Activity, Globe, CheckCircle2, PhoneCall, Award } from "lucide-react"
 
 export default function HorizonHeroSection() {
     const containerRef = useRef<HTMLDivElement>(null)

@@ -10,8 +10,7 @@ import { Autoplay, EffectCards, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
-import { Globe2, ShieldCheck, CheckCircle2, ArrowRight, MapPin, ChevronDown, BookOpen, Users, Library, BedDouble, Target, Zap, Compass, Layout, Star, Microscope, Smartphone } from 'lucide-react';
-import Footer from '../../components/Footer';
+import { Globe2, ShieldCheck, CheckCircle2, ArrowRight, MapPin, BookOpen, Users, Library, BedDouble } from 'lucide-react';
 import AdmissionForm from '../../components/AdmissionForm';
 import AdmissionProtocol from '../../components/ui/AdmissionProtocol';
 
@@ -48,28 +47,6 @@ function CosmicParticles() {
   );
 }
 
-function Counter({ target, label, suffix = '' }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef();
-  const inView = useInView(ref, { once: true });
-  useEffect(() => {
-    if (!inView) return;
-    let start = 0;
-    const step = target / 60;
-    const t = setInterval(() => {
-      start += step;
-      if (start >= target) { setCount(target); clearInterval(t); }
-      else setCount(Math.floor(start));
-    }, 25);
-    return () => clearInterval(t);
-  }, [inView, target]);
-  return (
-    <div ref={ref} className="text-center p-8 rounded-2xl bg-[#0e0518]/60 border border-[#a855f7]/20 hover:border-[#a855f7]/50 transition-all">
-      <div className="text-5xl font-black text-[#a855f7] mb-2">{count.toLocaleString()}{suffix}</div>
-      <div className="text-[#8a6aaa] text-sm uppercase tracking-widest font-semibold">{label}</div>
-    </div>
-  );
-}
 
 const AndijanStateMedicalInstitute = () => {
   const { scrollYProgress } = useScroll();

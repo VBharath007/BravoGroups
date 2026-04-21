@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '../components/Navbar';
-import LeadPopup from '../components/LeadPopup';
 
 /* ─── Animation Variants ─────────────────────────────────── */
 const fadeUp = {

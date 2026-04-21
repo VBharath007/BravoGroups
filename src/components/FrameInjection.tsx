@@ -43,20 +43,24 @@ export default function FrameInjection() {
     const loadedImages: HTMLImageElement[] = [];
     let loaded = 0;
 
+    const handleLoad = () => {
+      loaded++;
+      setLoadedCount(loaded);
+    };
+
+    const handleError = (idx: string) => {
+      console.warn(`Frame ${idx} failed to load`);
+      loaded++;
+      setLoadedCount(loaded);
+    };
+
     for (let i = 0; i < FRAME_COUNT; i++) {
       const img = new Image();
       const fileIndex = String(i + 1).padStart(3, '0');
       img.src = `/frameinjection/video_in_${fileIndex}.png`;
 
-      img.onload = () => {
-        loaded++;
-        setLoadedCount(loaded);
-      };
-      img.onerror = () => {
-        console.warn(`Frame ${fileIndex} failed to load`);
-        loaded++;
-        setLoadedCount(loaded);
-      };
+      img.onload = handleLoad;
+      img.onerror = () => handleError(fileIndex);
       loadedImages.push(img);
     }
     setImages(loadedImages);

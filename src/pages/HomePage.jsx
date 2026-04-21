@@ -9,8 +9,6 @@ import { cn } from '../lib/utils';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './HomePage.css';
-import Dna from "../components/ui/Dna"
-import Navbar from '../components/Navbar';
 import HorizonHeroSection from '../components/ui/horizon-hero-section.tsx';
 import LazyImage from '../components/Lazyimage';
 
@@ -20,12 +18,6 @@ import uni3 from '../assets/BUKHARA-STATE-MEDICAL-UNIVERSITY.webp';
 import uni4 from '../assets/Andijan-State-Medical-University.webp';
 import uni5 from '../assets/fergana.jpeg';
 
-import one from '../assets/whychooseus1.png';
-import two from '../assets/whychooseus2.png';
-import three from '../assets/whychooseus3.png';
-import four from '../assets/whychooseus4.png';
-import five from '../assets/whychooseus5.png';
-import six from '../assets/whychooseus6.png';
 import aboutVideo from '../assets/aboutvideo1.mp4';
 import g1 from '../assets/stud1.jpeg';
 import g2 from '../assets/stud2.jpeg';
@@ -61,11 +53,6 @@ import img11 from "../assets/1 (11).jpeg"
 
 
 import v1 from '../assets/Videos/1.mp4';
-import v2 from '../assets/Videos/2.mp4';
-import v3 from '../assets/Videos/3.mp4';
-import v4 from '../assets/Videos/4.mp4';
-import v5 from '../assets/Videos/6.mp4';
-import v6 from '../assets/Videos/7.mp4';
 
 import { videos as centralVideos } from '../data/videoData';
 
@@ -463,7 +450,6 @@ function UniversitySection({ tag, title, unis, onUniClick, className }) {
 }
 
 export default function HomePage() {
-  const sectionRef = useRef(null);
   const parentRef = useRef(null);
   const asideRef = useRef(null);
   const listRef = useRef(null);

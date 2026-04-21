@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import Navbar from '../components/Navbar';
 
 import heroDark from '../assets/kyrgyzstan_hero_dark.png';
 import bishkekCity from '../assets/bishkek_city_hd.png';
 import whyChooseImg from '../assets/dr_ameera.png';
-import uni1 from '../assets/TASHKENT-MEDICAL-ACADEMY.webp';
-import uni2 from '../assets/uni2.png';
 import uni6 from '../assets/uni6.png';
 import ctaBoy from '../assets/cta_boy.png';
 
@@ -16,7 +13,6 @@ const KyrgyzstanMBBS = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [openFaq, setOpenFaq] = React.useState(null);
 
   const whyPoints = [
     { icon: '🏥', text: 'NMC & WHO approved medical universities with globally recognized degrees.' },

@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { SplineScene } from '../components/ui/spline';
 import AOS from 'aos';
-import LazyImage from '../components/Lazyimage';
 import 'aos/dist/aos.css';
 import './AboutPage.css';
-import LeadPopup from '../components/LeadPopup';
 
 
 // Reusing assets

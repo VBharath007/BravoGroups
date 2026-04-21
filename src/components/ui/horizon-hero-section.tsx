@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.jpeg";
 
@@ -59,7 +59,7 @@ export default function FrameInjection() {
   const scrollHintRef = useRef<HTMLDivElement>(null);
   const pillRef = useRef<HTMLDivElement>(null);
 
-  const overlayRefs = [missionRef, visionRef, admissionRef, finaleRef];
+  const overlayRefs = useMemo(() => [missionRef, visionRef, admissionRef, finaleRef], [missionRef, visionRef, admissionRef, finaleRef]);
 
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [loadedCount, setLoadedCount] = useState(0);
@@ -69,10 +69,10 @@ export default function FrameInjection() {
   useEffect(() => {
     const list: HTMLImageElement[] = [];
     let done = 0;
+    const fin = () => { done++; setLoadedCount(done); };
     for (let i = 1; i <= FRAME_COUNT; i++) {
       const img = new Image();
       img.src = `/frameinjection/video_in_${String(i).padStart(3, "0")}.png`;
-      const fin = () => { done++; setLoadedCount(done); };
       img.onload = fin;
       img.onerror = fin;
       list.push(img);
@@ -227,7 +227,7 @@ export default function FrameInjection() {
       pinned.style.position = "";
       pinned.style.top = "";
     };
-  }, [isReady, images]);
+  }, [isReady, images, overlayRefs]);
 
   const pct = Math.round((loadedCount / FRAME_COUNT) * 100);
 

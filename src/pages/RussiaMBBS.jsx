@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import Navbar from '../components/Navbar';
 
 // Placeholder images — replace with Russia-specific images when available
 import heroDark from '../assets/uzbekistan_hero_dark.png';
