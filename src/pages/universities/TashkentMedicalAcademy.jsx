@@ -470,7 +470,7 @@ const TashkentMedicalAcademy = () => {
         onClose={() => setIsFormOpen(false)}
         universityName="Tashkent Medical Academy"
       />
-      <div className="bg-[#030814]"><Footer /></div>
+
     </div>
   );
 };

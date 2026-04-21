@@ -423,7 +423,7 @@ const SamarkandStateMedicalUniversity = () => {
         onClose={() => setIsFormOpen(false)}
         universityName="Samarkand State Medical University"
       />
-      <div className="bg-[#050e05]"><Footer /></div>
+
     </div>
   );
 };

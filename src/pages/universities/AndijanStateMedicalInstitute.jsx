@@ -514,7 +514,7 @@ const AndijanStateMedicalInstitute = () => {
         onClose={() => setIsFormOpen(false)}
         universityName="Andijan State Medical Institute"
       />
-      <div className="bg-[#07030f]"><Footer /></div>
+
     </div>
   );
 };
